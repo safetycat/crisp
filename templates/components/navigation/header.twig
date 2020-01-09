@@ -10,7 +10,7 @@
     <div class="uk-navbar-right uk-width-1-6 uk-width-1-1@m uk-align-auto uk-margin-remove uk-margin-small@m uk-flex uk-flex-right">
       <ul class="uk-navbar-nav uk-visible@m"  id="main-navigation" >
         {% for item in menu.items %}
-        <li class="uk-text-large {{item.classes|join(' ')}}"><a class="" href="{{ item.link }}">{{ item.title }}</a></li>
+        <li class="uk-text-large {{item.classes|join(' ')}}"><a class="uk-text-center" href="{{ item.link }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul> {# /uk-navbar-nav #}
 
