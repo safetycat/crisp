@@ -1,0 +1,26 @@
+$green    : rgba(0, 177, 187, 1);   // Green (turquoise)
+$blue     : rgba(91, 117, 159, 1);   // Blue
+$purple   : rgba(152, 96, 140, 1); // Purple
+$red      : rgba(233, 102, 108, 1); // Red
+$peach    : rgba(238, 141, 121, 1); // Peach (burnt orange)
+$orange   : rgba(243, 150, 109, 1); // Orange 
+$grey     : rgba(231, 231, 231, 1);
+
+
+// overrides for default 
+$global-default-background     : $grey;
+$background-default-background : $global-default-background;
+$card-default-color            : $grey;
+$card-default-background       : $grey;
+$card-default-color-mode       : dark;
+
+// overrides for primary 
+$global-primary-background : $blue;
+$card-primary-color        : $grey;
+$card-primary-background   : $blue;
+$card-primary-color-mode   : dark;
+
+// overrides for secondary 
+$global-secondary-background : $purple;
+$card-secondary-background   : $purple;
+$card-secondary-color-mode   : light;

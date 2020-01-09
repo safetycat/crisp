@@ -1,0 +1,27 @@
+.tease-resource {
+  border-top: 2px solid #BFC0BF;
+  &-header {
+    font-size: 1rem;
+  }
+  &-body {
+    &-text {
+      color:#424242;
+      font-size: 0.9rem;
+    }
+    .uk-button {
+      color: #1e87f0;
+      text-transform: none;
+    }
+  }
+  &-footer {
+    color: #1e87f0;
+  }
+  .uk-card-footer {
+    border-top: 1px solid #fff;
+  }
+  .min-height {
+    min-height: 230px;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+{
+  "name": "kitty",
+  "version": "1.0.0",
+  "description": "gutenburg ready wordpress theme using timber & twig following atomic design principles",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/safetycat/kitty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/safetycat/kitty/issues"
+  },
+  "homepage": "https://github.com/safetycat/kitty#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^4.3.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
+    "uikit": "^3.2.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "nodemonConfig": {
+    "ext": "scss"
+  }
+}

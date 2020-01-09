@@ -1,0 +1,17 @@
+.hero {
+  margin-top: 23px;
+  &-body {
+    
+    height: 385px;
+    &-teaser {
+      text-shadow:
+        -1px -1px 0 rgb(121, 117, 117),
+        1px -1px 0 rgb(121, 117, 117),
+        -1px 1px 0 rgb(121, 117, 117),
+        1px 1px 0 rgb(121, 117, 117),
+    }
+    &-cta-wrapper {
+      margin-top: 15px;
+    }
+  }
+}

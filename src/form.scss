@@ -1,0 +1,28 @@
+textarea {
+  @extend .uk-textarea;
+}
+
+select {
+  @extend .uk-select;
+}
+
+.gform_footer input[type=submit] {
+  @extend .uk-button;
+  @extend .uk-button-default:hover;
+  width: auto;
+  border: 1px solid #b2b2b2 !important;
+}
+
+.gform_footer input[type=submit]:hover {
+  background-color: rgb(212, 212, 212) !important;
+}
+
+
+
+
+.gform_body li {
+  margin-top: 20px;
+  list-style: none;
+}
+
+

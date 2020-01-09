@@ -5,20 +5,22 @@
 
     <img alt="hero-image" class="uk-cover" src="{{ Image(post.meta('image')).src }}"  uk-cover />
     
-    <div class="uk-position-left">
+    <div class="uk-position-center">
     <div class=""></div>
 
-
+ <div class="uk-container uk-container-center">
       <div class="hero-body-teaser uk-width-1-1 uk-width-3-5@m uk-width-4-5@l uk-padding-large uk-margin-top-large  uk-text-left">
-        <h2 class="uk-light">
-          {{ post.meta('header') }}
-          {{ post.meta('text') }}
-        </h2>
-        <div class="uk-position-small uk-position-bottom-center">
-          <form action="{{ post.meta('link') }}" style="display:inline">
-            <button type="submit" class="uk-button uk-button-default hero-body-cta-wrapper-bg-grey">Read More ></button>
-          </form>
-        </div>
+       
+          <h2 class="uk-light">
+            {{ post.meta('header') }}
+            {{ post.meta('text') }}
+          </h2>
+          <div class="uk-position-small uk-position-bottom-center">
+            <form action="{{ post.meta('link') }}" style="display:inline">
+              <button type="submit" class="uk-button uk-button-default hero-body-cta-wrapper-bg-grey">Read More ></button>
+            </form>
+          </div>
+      </div>
       </div>
 
 

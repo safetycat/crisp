@@ -1,16 +1,12 @@
 .case-study {
   &-header {
-    // background: #0B0B1E;
+    background: #0B0B1E;
     &-height-390 {
       height: 390px;
     }
     &-wrapper {
       display: inline-block;
-      // background: white;
-      padding-left: 30px;
-      padding-right: 30px;
-      background-image: url('../../../static/dots.png');
-      background-repeat: none;
+      background: white;
     }
     &-title-text {
       color: white;

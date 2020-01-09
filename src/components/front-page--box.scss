@@ -1,0 +1,20 @@
+.question-card {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  .uk-container {
+    max-width: 1145px;
+  }
+  .uk-card {
+    &-title {
+      color: #fff !important;
+    }
+    &-body {
+      border-top: 1px solid white;
+      color: #fff !important;
+      flex-grow: 1;  
+    }
+  }
+  .uk-button-text {
+    color: #fff !important;   
+  }   
+}

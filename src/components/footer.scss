@@ -1,0 +1,7 @@
+.uk-footer {
+  background: #252525;
+}
+
+#footer .widget ul{
+	@extend .uk-list;
+}

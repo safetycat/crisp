@@ -25,15 +25,15 @@
     {% endif %}
 </div>
 
-<footer id="footer" class="uk-footer uk-padding uk-light">
+<footer id="footer" class="uk-footer uk-padding uk-padding-remove-horizontal uk-light">
     <div class="uk-container uk-container-center">
-      <div class="uk-child-width-1-3@s uk-padding-large uk-padding-remove-vertical" uk-grid>
+      <div class="uk-child-width-1-3@s " uk-grid>
               {{ footer_widgets }}
       </div><!-- /uk-grid -->
 
        
 
-          <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-members">SASP Members</button>
+          <button class="uk-button uk-button-default uk-margin-bottom" type="button" uk-toggle="target: #toggle-members">SASP Members</button>
  
           <div id="toggle-members" class=" uk-grid uk-grid-collapse uk-child-width-1-3@s" uk-grid  hidden>
              {% for member in (options_members.members) %}
@@ -43,5 +43,5 @@
               
           {% endfor %}
         </div>
-      <div class="uk-text-center uk-margin-top">SASP is a programme hosted by the Campaign Against Living Miserably (CALM), registered charity number 1110621 and SC044347. Copyright CALM {{"now"|date('Y')}}</div>
+      <div class="uk-text-center uk-margin-large-top">SASP is a programme hosted by the Campaign Against Living Miserably (CALM), registered charity number 1110621 and SC044347. Copyright {{"now"|date('Y')}}</div>
     </div><!-- /container -->

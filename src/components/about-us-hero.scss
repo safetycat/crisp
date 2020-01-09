@@ -1,0 +1,27 @@
+
+.about-us {
+  &-hero {
+    margin-top: 23px;
+    height: 845px;
+    position: relative;
+    &.has-background {
+      position: relative;
+      overflow: hidden;
+    }
+    &-body {
+      position: relative;
+      top: 150px;
+      max-width: 1120px;
+      background-color: rgba(13,11,43,0.5);
+    }
+    &-scroll-icon {
+      position: relative;
+      display: block;
+      max-width:60px;
+      top: 200px;
+      svg > polyline {
+        stroke-width: 2px;
+      }
+    }
+  }
+}
