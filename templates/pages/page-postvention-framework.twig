@@ -1,0 +1,14 @@
+{% extends "page.twig" %}
+
+{% block main %}
+
+		<article class="post-type-{{post.post_type}} uk-article" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1 uk-article-title">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+
+{% endblock %}

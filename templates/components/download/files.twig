@@ -1,0 +1,5 @@
+{% for file_o in post.meta('files') %}
+		 <div><span uk-icon="download"></span><a href="{{file_o.file.url}}"  data-uk-tooltip title="{{file_o.file.title}}"> Download </a>
+		</div>
+
+{% endfor %}

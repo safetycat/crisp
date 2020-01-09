@@ -1,0 +1,17 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+
+<div class="uk-card uk-card-default uk-card-body 
+				{% for term in post.terms('res_category') %}
+			    {{term.slug}}
+			{% endfor %}
+	 ">
+	<h4 class="">XX <a href="{{post.link}}">{{post.title}}</a></h4>
+		<p>{{post.preview.length(25)}}</p>
+		<footer>
+			{{ post.terms('res_category')|join(', ') }}
+	</footer>
+</div>
+
+{% endblock %}

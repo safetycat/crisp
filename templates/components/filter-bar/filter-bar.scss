@@ -1,0 +1,11 @@
+.filter-bar {
+  background: $grey;
+  // padding: 5px;
+  .beautiful-taxonomy-filters-select-wrap, 
+  .beautiful-taxonomy-filters-tax {
+    display: inline;
+  }
+  .beautiful-taxonomy-filters-label {
+    display: none;
+  }
+}

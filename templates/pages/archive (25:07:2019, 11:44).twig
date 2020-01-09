@@ -1,0 +1,19 @@
+{% extends "index.twig" %}
+
+{% block main %}
+ 
+ <div class="item"> 
+      {% if title %}<h1 class="title">{{title}}</h1>{% endif %}
+
+		      	{% for post in posts %}
+            <div class="uk-margin-small-bottom">
+		      		{% include ['teasers/tease-'~post.post_type~'.twig', 'teasers/tease.twig'] %}
+            </div>
+		      	{% endfor %}
+		
+    	{% include 'pagination/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  </div>
+
+
+
+{% endblock %}

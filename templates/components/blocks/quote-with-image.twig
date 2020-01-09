@@ -1,0 +1,29 @@
+{% extends "/blocks/block.twig" %}
+
+{% block block %}
+<div class="block-quote-image" style="background-color:{{background_colour}}">
+  <div class="block-quote-image-content uk-padding">
+
+    {% if headline %}<a name="{{ headline|first }}"></a>
+    <h3 class="block-quote-image-headline block-headline uk-heading-small">{{headline}}</h3>
+    {% endif %}
+  
+    <span class="block-quote-image-body {{ background_colour == '#fff' ? 'uk-dark' : 'uk-light' }}">{{body_text}}</span>
+    {% if resource_list %}
+    <div class="downloads uk-padding">
+      {% for item in resource_list %}
+      <div class="uk-light">
+                 {% if ('crisp' in item.resource_url) %}
+                    <a class="" href="{{item.resource_url}}"><span uk-icon="chevron-right"></span> {{item.resource_label}}</a>
+                {% else %}
+                   <a class="" href="{{item.resource_url}}" target="_blank"><span uk-icon="sign-out"></span> {{item.resource_label}}</a>
+                {% endif %}
+            </div>
+      {% endfor %}
+    </div>
+    {% endif  %}
+    <div class="uk-padding"> <img class="uk-align-center" src="{{image}}" ></div>
+  
+  </div>       
+</div>
+{% endblock %}

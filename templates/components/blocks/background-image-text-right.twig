@@ -1,0 +1,24 @@
+{% extends "/blocks/block.twig" %}
+
+{% block block %}
+<div style="background-image: url({{image}})" class="uk-padding uk-padding-remove-horizontal">
+  <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+      <div class="uk-width-1-2@m"></div><!-- empty div to fill first col -->
+      <div class="uk-width-1-2@m">
+        <div class="uk-background-default uk-padding">
+
+          <div class="block-content">
+            {% if headline %}
+            <h2 class="block-headline">{{headline}}</h2>
+            {% endif %}
+            <span class="block-body">{{body_text}}</span>
+            {% if link %}<a class="block-link" href="{{link}}">Read more...</a>{% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %} {# declare the single column max width #}
+<div class="uk-container uk-container-center">
+	<div class="" >
+		<!-- 	<div class="uk-padding-large uk-padding-remove-bottom"> -->
+				{% block main %} 
+        {# you can override this #}
+				{% endblock %}
+
+		<!--</div> /uk-width col -->
+	</div><!-- /uk-grid -->
+</div><!-- /container -->
+
+{% endblock %}
+
+{# 
+	blocks allow you to add full width blocks underneath the content 
+	current possible values for block.layout:
+		text-left-list-resources-right
+
+		quote-no-image
+		quote-with-image
+		2-3-text-box-1-3-blue-quote-box
+		1-2-image-box-2-2-text-box
+		1-2-text-box-2-2-image-box
+		cs1-2-image-box-2-2-text-box // for case studies
+		cs1-2-text-box-2-2-image-box // for case studies
+#}
+{% block xtra %}
+    {% if post.meta('block') %}
+        {% for block in post.meta('block') %}
+            {{ include("blocks/#{block.layout}.twig", block) }}
+        {% endfor %}
+    {% elseif post.meta('day_in_the_life') == TRUE %}
+        <div class="uk-container uk-container-center">
+            {% for block in post.meta('time_section') %}
+                {{ include("blocks/time-block.twig", block) }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

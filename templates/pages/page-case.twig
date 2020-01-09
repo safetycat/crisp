@@ -1,0 +1,18 @@
+{% extends "page.twig" %}
+
+{% block main %}
+
+    <article class="{{post.class}} uk-article" id="post-{{post.ID}}">
+      <section class="article-content">
+        <h1 class="article-h1 uk-article-title">{{post.title}}</h1>
+        <div class="article-body">
+          
+
+			{{ include('slideshow/slideshow.twig') }}
+
+         
+        </div>
+      </section>
+    </article>
+
+{% endblock %}

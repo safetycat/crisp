@@ -1,0 +1,33 @@
+{% extends "container.twig" %}
+
+{% block main %}
+
+  <div class="uk-grid">
+    {% if sidebar %}
+        <div class="uk-width-1-5">
+          <aside class="layout-sidebar">
+            {{sidebar}}
+          </aside>
+        </div>
+    {% endif %}
+
+    <div class="uk-width-expand">
+      {% if title %}<h1 class="title">{{title}}</h1>{% endif %}
+
+        <div class="main-content">
+
+      	{% for post in posts %}
+      		{% include ['teasers/tease-'~post.post_type~'.twig', 'teasers/tease.twig'] %}
+      	{% endfor %}
+
+    	{% include 'pagination/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "teasers/tease.twig" %}
+
+{% block content %}
+
+<div class="uk-card border1" >
+	
+		<div class="uk-card-header uk-padding-small uk-padding-remove-bottom">
+			<span class="uk-card-title uk-margin-remove-bottom tease-resource-header">
+				<h4><a href="{{post.link}}">{{post.title}}</a></h4>
+			</span>
+		</div>
+	
+	<div class="uk-flex uk-padding uk-padding-remove-top" >
+		<div class="uk-width-auto">
+				{% if post.meta('files')[0].file %}
+					
+				<img  src="{{ function('wp_get_attachment_thumb_url', post.meta('files')[0].file.ID) }}" />
+			{% else %}
+				<span uk-icon="icon: file-{{ post.terms('res_category')[0].slug ?? 'text' }}; ratio: 7"></span>
+			{% endif %}
+		</div>
+			
+		<div class="uk-card-body uk-padding-small">
+					<p class="tease-resource-body-text">{{post.preview.length(5).read_more(false)}}</p>
+					<div><a href="{{post.link}}" class=""><span uk-icon="chevron-right"></span> View online </a></div>
+					<div><a href="{{post.meta('files')[0].file.url }}"><span uk-icon="download"></span> Download </a></div>
+		</div>
+		
+	</div>
+
+
+    <div class="uk-padding  uk-padding-remove-top">
+			<p class="uk-position-bottom-left uk-text-meta"><span  class="uk-margin-small-right uk-margin-small-left uk-icon" uk-icon="tag"></span>{{ post.terms('key')|join(', ') }}</p>		
+    </div>
+</div>
+
+{% endblock %}

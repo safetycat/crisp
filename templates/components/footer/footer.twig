@@ -1,0 +1,47 @@
+<div class="ctastrip uk-margin-large-top">
+    {% if post.meta('call_to_action_box') == true %}
+
+       <div class="uk-container uk-container-center">
+            <div class=" uk-flex uk-light">
+
+                <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-bottom">
+                  <h3 class="">
+                    {{ post.meta('cta_text')}}
+                  </h3>
+                </div>
+
+                  {% for button in post.meta('calls_to_action') %}
+                  
+                    <div class="uk-padding-small "> <a href="{{button.link.url}}" class="uk-button uk-button-default">{{button.title}}</a> </div>
+                    
+                  {% endfor %}
+                  
+                
+                
+              
+          </div>
+      </div>
+
+    {% endif %}
+</div>
+
+<footer id="footer" class="uk-footer uk-padding uk-light">
+    <div class="uk-container uk-container-center">
+      <div class="uk-child-width-1-3@s uk-padding-large uk-padding-remove-vertical" uk-grid>
+              {{ footer_widgets }}
+      </div><!-- /uk-grid -->
+
+       
+
+          <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-members">SASP Members</button>
+ 
+          <div id="toggle-members" class=" uk-grid uk-grid-collapse uk-child-width-1-3@s" uk-grid  hidden>
+             {% for member in (options_members.members) %}
+               <div class="grid-unit">
+                  <div class=""><a href={{member.url}} target="_blank" ><span class="uk-text-small uk-text-muted">{{member.name}}</span></a></div>
+                </div>
+              
+          {% endfor %}
+        </div>
+      <div class="uk-text-center uk-margin-top">SASP is a programme hosted by the Campaign Against Living Miserably (CALM), registered charity number 1110621 and SC044347. Copyright CALM {{"now"|date('Y')}}</div>
+    </div><!-- /container -->

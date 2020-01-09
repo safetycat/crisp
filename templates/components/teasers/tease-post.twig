@@ -1,0 +1,16 @@
+{% extends "teasers/tease.twig" %}
+
+{% block content %}
+
+		<div class="uk-card-media-top">
+                {% if post.get_thumbnail %}
+					<img src="{{post.thumbnail.src}}" />
+				{% endif %}
+        </div>
+		 <div class="uk-card-body">
+				<h4 class="uk-h4"><a href="{{post.link}}">{{post.title}}</a></h4>
+				<p>{{ post.preview.length(20).read_more('<button class="uk-button uk-button-secondary uk-margin-top uk-display-block">Continue Reading</button>') }}</p>
+		</div>
+
+
+{% endblock %}

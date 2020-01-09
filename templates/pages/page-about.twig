@@ -1,0 +1,38 @@
+{% extends "page.twig" %}
+
+{% block header %}
+	{{ parent() }}
+	{% include "about-us-hero/about-us-hero.twig" %}
+{% endblock %}
+
+{% block xtra %}
+
+<section class="about-us-people">
+  <div class="uk-container uk-container-center">
+    <div class="uk-padding-small">
+
+      {% for team in teams %}
+      <h2 class="uk-text-center uk-padding">{{team}}</h2>
+          <div class="team{{loop.index}} uk-grid" uk-grid >
+
+              {% for person in people %}
+                  {% set myteam =  person.terms('team').0.name %}
+                  {% if myteam == team %}
+                      <div class="uk-width-1-3@m uk-width-1-2@s"><div>
+                          {% include "person/person-bio.twig" %}
+                      </div> </div>
+                  {% endif %}
+                
+              {% endfor %}
+
+          </div><!-- /uk-grid -->
+       {% endfor %}
+
+     </div>
+    </div><!-- /uk-container -->
+
+
+
+  </div><!-- /uk-container -->
+</section>
+{% endblock %}

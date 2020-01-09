@@ -1,0 +1,45 @@
+{% if menu %}
+ <nav class="uk-navbar-container  uk-margin-remove-left uk-margin-small-top uk-navbar uk-navbar-transparent uk-margin-bottom uk-flex-between" uk-navbar>
+
+    <div class="uk-navbar-left uk-padding-remove-left">
+      <a class="uk-navbar-item uk-logo" href="{{site.url}}" rel="home">
+        <img src="{{ logo.url }}" alt="{{site.name}}"/>
+      </a>
+    </div> {# /navbar-left #}
+
+    <div class="uk-navbar-right uk-width-1-6 uk-width-1-1@m uk-align-auto uk-margin-remove uk-margin-small@m uk-flex uk-flex-right">
+      <ul class="uk-navbar-nav uk-visible@m"  id="main-navigation" >
+        {% for item in menu.items %}
+        <li class="uk-text-large {{item.classes|join(' ')}}"><a class="" href="{{ item.link }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul> {# /uk-navbar-nav #}
+
+      <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon uk-padding-remove-horizontal">
+        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon">
+          <rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect>
+        </svg>
+      </a>
+    </div> {# /navbar-right #}
+
+
+
+</nav>{# /uk-navbar-container #}
+
+<div id="offcanvas" uk-offcanvas="mode: push; overlay: true" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <div class="uk-panel">
+      <button class="uk-offcanvas-close" title="close menu" alt="close menu" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-default tm-nav">
+            {% for item in menu.items %}
+            <li><a class="" href="{{ item.link }}">
+              {{ item.title }}
+            </a></li>
+            {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+

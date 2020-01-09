@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block header %}
+	{{ parent() }}
+	{% include "hero/hero.twig" %}
+{% endblock %}
+
+{% block content %}
+		<section class="">
+			<div class="uk-container uk-container-center">
+
+				<article id="post-{{post.ID}}" class="front-page-content-article post-type-page article-content section uk-justify uk-padding uk-padding-remove-horizontal">
+					<h1 class="article-h1 title uk-text-large uk-text-uppercase">{{post.title}}</h1>
+					<div class="article-body">
+						{{post.content}}
+					</div>
+				</article>
+
+			</div><!-- close container -->
+		</section>
+
+		<section class="tilebank uk-background-primary ">
+			<div class="uk-container uk-container-center">
+				<div class="uk-grid  uk-child-width-1-3@s uk-grid-match uk-flex-around" uk-grid>
+
+					{% for tile in post.meta('tilebank') %}
+						{% include 'front-page/front-page--box.twig' %}
+					{% endfor %}
+
+				</div><!-- close grid -->
+
+			</div><!-- close container -->
+		</section>
+
+		<section class="questionbank">
+			<div class="uk-container uk-container-center">
+				{% include 'front-page/front-page--accordion.twig' %}
+			</div><!-- close container -->
+		</section>
+
+
+{% endblock %}

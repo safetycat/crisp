@@ -1,0 +1,24 @@
+<div class="">
+<ul class="tool-pagination pagination uk-pagination uk-margin-top">
+
+    {% if posts.pagination.prev %}
+    <li>
+        <a href="{{posts.pagination.prev.link}}" class="nav-previous {{posts.pagination.prev.link|length ? '' : 'invisible'}}"><span class="uk-margin-small-right" uk-pagination-previous></span>Prev</a></li>
+    {% endif %}
+ 
+        {% for page in posts.pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+                {% else %}
+                    <span class="uk-active {{page.class}}">{{page.title}}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+    {% if posts.pagination.next %}
+       <li> <a href="{{posts.pagination.next.link}}" class="nav-next  {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next<span class="uk-margin-small-left" uk-pagination-next></span></a></li>
+    {% endif %}
+    </ul>
+
+</div>

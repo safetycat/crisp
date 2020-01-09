@@ -1,0 +1,29 @@
+{% extends "/blocks/block.twig" %}
+
+{% block block %}
+<div class="uk-container uk-container-center">
+  <div class="uk-padding uk-padding-remove-vertical block-1-2-text-box-2-2-image-box uk-text-justify" style="background-color:{{background_colour}}">
+     <div class="uk-grid uk-child-width-1-2@m uk-grid-match" uk-grid>
+
+      <div class="">
+        <div class="block-1-2-text-box-2-2-image-box-content {{ background_colour == '#fff' ? 'uk-dark' : 'uk-light' }}">
+          {% if headline %}
+          <h2 class="block-headline uk-heading-small">{{headline}}</h2>
+          {% endif %}
+          <span class="cs1-block-1-2-text-box-2-2-image-box-body">{{body_text}}</span>
+          {% if resource_list %}
+            <div class="downloads uk-padding">
+              {% for item in resource_list %}
+                <a class="uk-button uk-button-secondary uk-margin-small uk-margin-remove-top" href="{{item.resource_url}}" target="_blank"> {{item.resource_label}}</a>
+              {% endfor %}
+            </div>
+          {% endif  %}
+        </div>       
+      </div> 
+      <div>
+      <div class=" block-1-2-text-box-2-2-image-box-image uk-background-center-center " style="background-image: url({{image}})"></div></div>
+
+    </div><!-- /grid -->
+  </div>
+</div>
+{% endblock %}

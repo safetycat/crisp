@@ -1,0 +1,21 @@
+{% extends "/blocks/block.twig" %}
+
+{% block block %}
+
+
+    <div class="time-block block-content uk-margin-small-top">
+          <div class="block-body uk-flex ">
+
+          {% if time %}	
+              <div class="uk-width-auto@s uk-padding-small uk-padding-remove-top uk-vertical-align">
+      		      	<span class="uk-margin-small-right" uk-icon="icon:clock;ratio:2"></span>
+      		     </div>
+      		{% endif %}
+
+          <div class="uk-width-expand@s uk-text-justify"><span class="uk-text-bold">{{time}}</span> {{text}}</div>
+        </div>
+
+    </div>       
+
+
+{% endblock %}

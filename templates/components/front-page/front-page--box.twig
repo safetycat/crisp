@@ -1,0 +1,22 @@
+<div class="question-card">
+    <div class="uk-card-small uk-flex uk-flex-column uk-padding-small uk-padding-remove-top">
+        <div class="uk-card-header uk-margin">
+            <div class="uk-grid-small uk-flex-top uk-grid">
+                <div class="uk-width-auto@m uk-text-center">
+                    <a href="{{ tile.link }}" class="">
+                        <img class="uk-border-circle" width="100" height="100" src="{{ tile.icon.url|resize(100, 100) }}" alt="{{ tile.title }}">
+                    </a>
+                </div>
+                <div class="uk-width-expand uk-text-top">
+                    <a href="{{ tile.link }}" class=""><h2 class="uk-card-title uk-margin-remove-bottom">{{ tile.title }}</h2></a>
+                </div>
+            </div>
+        </div>
+  {#       <div class="uk-card-body uk-padding-remove-bottom uk-padding-remove-horizontal uk-margin-left uk-margin-right">
+            <p>{{ tile.text }}</p>
+        </div> #}
+        <div class="uk-card-footer uk-align-center uk-margin-remove-vertical">
+            <a href="{{ tile.link }}" class="uk-button uk-button-default  uk-align-center uk-margin-auto">Read more ></a>
+        </div>
+    </div>
+</div>

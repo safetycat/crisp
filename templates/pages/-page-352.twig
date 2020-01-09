@@ -1,0 +1,45 @@
+{% extends "page.twig" %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block xtra %}
+<h1>Hai</h1>
+{{ dump(post.meta('section')) }}
+<section class="sections">
+  <div class="uk-container uk-container-center">
+    <div class="uk-padding-large uk-padding-remove-top ">
+        <div class="uk-margin-small-top" >
+        {% for item in post.meta('section') %}
+            <div>
+                <a href="#" class=" uk-background-secondary uk-padding-small"> {{item.title}}</a>
+                <div class="">
+                    <div class="uk-card uk-card-primary uk-padding">{{item.content}}</div>
+                    <div class="uk-padding">
+                        {% for tool in item.links_and_resources %}
+                            {% set href = tool.link ? tool.link.guid : tool.url %}
+                            {% set type = tool.link ? 'link' : 'world' %}
+                            {% set window = tool.link ? '_self' : '_blank' %}
+                            <a href="{{href}}"class="uk-button uk-button-primary uk-margin-small-bottom uk-padding-small" target="_blank" href=""><span uk-icon={{type}}></span> {{tool.name}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+              
+            </div>
+                  
+                
+        {% endfor %}
+
+</div>
+
+     </div>
+    </div><!-- /uk-container -->
+
+
+
+  </div><!-- /uk-container -->
+</section>
+{% endblock %}
+
+

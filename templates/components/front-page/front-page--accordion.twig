@@ -1,0 +1,12 @@
+
+<h3 class="uk-margin-remove-bottom questionbank-header">Short on Time?</h3>
+<ul uk-accordion class="uk-margin-small-top" >
+  {% for question in post.meta('questionbank') %}
+    <li >
+      <a href="#" class="uk-accordion-title uk-background-default uk-padding-small">{{ question.post_title }}</a>
+      <div class="uk-accordion-content">
+        {{ question.post_content }}  
+      </div>
+    </li>
+  {% endfor %}
+</ul>

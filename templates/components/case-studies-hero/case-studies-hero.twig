@@ -1,0 +1,19 @@
+  <div class="uk-margin-top">
+  	<header class="case-study-header"  
+      {% if post.thumbnail %}
+      style="background-image:url({{ post.thumbnail.src('thumb') }})"
+        {% endif %}
+        >
+
+        <div class="darken">
+            <div class="uk-container uk-container-center uk-flex uk-flex-row uk-flex-bottom case-study-header-height-390">
+                <div>
+                  <div class="case-study-header-title-text uk-padding">CASE STUDY</div>
+                  <div class="cs-header-wrapper uk-padding uk-padding-remove-bottom">
+                    <h3 class="block-headline">{{ post.title }}</h3>
+                  </div>
+                </div>
+            </div>
+      </div>
+  	</header>
+</div>

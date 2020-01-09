@@ -1,0 +1,38 @@
+	{% block html_head_container %}
+	  {% include 'html-header.twig' %}
+	  {% block head %}{% endblock %}
+	  </head>
+	{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<a class="skip-link is-sr-only" href="#content">{{ _e( 'Skip to content') }}</a>
+			{% block header %}  {# loads the logo and nav #}
+			<div class="uk-container uk-container-center block-header">
+				
+					<div >
+						{% include "navigation/header.twig" %}
+					</div>
+				
+			</div>
+			{% endblock %}
+
+			<main id="content" role="main" class="main"> {# gets overriden by other templates #}
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</main>
+
+			<section id="xtra"> {# can be used for extra stuff #}
+				{% block xtra %}
+				{% endblock %}
+			</section>
+
+			{% block footer %}
+			
+				{% include 'footer/footer.twig' %}
+		
+			{{ function('wp_footer') }}
+			{% endblock %}
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "container.twig" %}
+
+{% block main %}
+	<div class="content-wrapper">
+
+		 <h1 class="title">{{post.title}}</h1>
+
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+<div class="uk-grid uk-child-width-1-2@m" uk-grid>
+	<div class="grid-item">
+			<div class="issuu uk-padding-vertical uk-padding uk-padding-remove-horizontal">
+				<iframe allowfullscreen allow="fullscreen" style="border:none;width:100%;height:326px;" src="{{post.meta('issu_link')}}"></iframe>
+			</div>
+		</div>
+
+			<div class="grid-item">
+			<section class="article-content uk-padding">
+				<div class="article-body">
+
+					{{post.content}}
+				</div>
+			
+				{% if post.files %}
+			      	{% for file_o in post.meta('files') %}
+		      			 <li><span uk-icon="download"></span><a href="{{file_o.file.url}}"  data-uk-tooltip title="{{file_o.file.title}}"> Download </a>
+		      			</li>
+
+		      	{% endfor %}
+				{% endif %}
+			<div class="uk-text-meta uk-align-right"><span  class="uk-margin-small-right uk-margin-small-left uk-icon" uk-icon="tag"></span>{{ post.terms('key')|join(', ') }}</div>	
+
+			</section>
+		</div>
+</div>
+
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

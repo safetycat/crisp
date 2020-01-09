@@ -1,0 +1,14 @@
+  <section class="about-us-hero has-background">
+    {# notice! about-us hero uses the featured post not the header image b/cos otherwise it appears twice
+    when it loads the standard page template #}
+    <img alt="hero-image" class="hero-background" src="{{ post.thumbnail.src }}" />
+    <h2 class="about-us-hero-header uk-light uk-heading-small uk-text-uppercase uk-text-center">{{ post.meta('header') }}</h2>
+    <div class="uk-margin">
+      <div class="about-us-hero-body uk-light uk-align-center uk-padding-small">
+        <span>{{ post.meta('text') }}</span>
+      </div>
+    </div>
+
+    <a href="#title" class="about-us-hero-scroll-icon uk-align-center uk-light">   <span uk-icon="icon: chevron-down; ratio: 3" class=""></span></a>
+
+  </section>

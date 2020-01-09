@@ -1,0 +1,25 @@
+{% extends "container.twig" %}
+
+{% block main %} {# main loads inside the container div #}
+
+	{% if post.meta('image') %} {# standard pages show a big head image if one is present #}
+	<img alt="hero-image" src="{{ Image(post.meta('image')).src }}" />
+	{% endif %}
+
+	<div class="uk-width-expand">
+		<article class="{{post.class}} article-content uk-padding uk-padding-remove-horizontal uk-text-justify" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 id="title" class="article-h1 uk-article-title">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div>
+
+	{% if post.meta('sidebar') %}
+
+	{% endif %}
+
+{% endblock %}
+

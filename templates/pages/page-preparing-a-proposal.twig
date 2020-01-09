@@ -1,0 +1,43 @@
+{% extends "page.twig" %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block xtra %}
+
+<section class="sections ">
+  <div class="uk-container uk-container-center">
+    <div class="uk-padding-large uk-padding-remove-top ">
+
+             <div class="" uk-switcher="animation:uk-animation-fade">
+                    {% for item in post.meta('section') %}
+                        <div class="uk-button uk-button-rainbow uk-margin-small-top uk-margin-small-right"><a href="#" >{{item.title}}</a></div>
+                    {% endfor %}
+              </div>
+              <div  class="uk-switcher uk-margin-small">
+                {% for item in post.meta('section') %}
+                        <div class="switch-content-item">
+                            <div class="uk-card  uk-padding-small uk-text-justify">{{item.content}}</div>
+                            <div class="uk-padding uk-padding-remove-top resources">
+                                {% for tool in item.links_and_resources %}
+                                    {% set href = tool.link ? tool.link.guid : tool.url %}
+                                    {% set type = tool.link ? 'link' : 'world' %}
+                                    {% set window = tool.link ? '_self' : '_blank' %}
+                                    <div><a href="{{href}}"class="uk-margin-small-bottom uk-padding-small" target="_blank" href=""><span uk-icon={{type}}></span> {{tool.name}}</a></div>
+                                {% endfor %}
+                            </div>
+                        </div>                      
+                {% endfor %}
+            </div>
+       
+     </div>
+    </div><!-- /uk-container -->
+
+
+
+  </div><!-- /uk-container -->
+</section>
+{% endblock %}
+
+

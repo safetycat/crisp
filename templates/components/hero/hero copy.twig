@@ -1,0 +1,31 @@
+
+{% if post.meta('image') %}
+
+  <section class="hero has-background">
+
+    <img alt="hero-image" class="hero-background" src="{{ Image(post.meta('image')).src }}" />
+    
+    <div class="hero-body uk-light uk-position-relative uk-grid uk-grid-collapse uk-flex uk-flex-middle">
+
+      <div class="hero-body-teaser uk-width-small@m uk-margin-large-right"></div>
+
+      <div class="hero-body-teaser uk-width-4-5 uk-width-1-5@m uk-padding uk-padding-remove-horizontal uk-text-right">
+        <h4 class="uk-light">
+          {{ post.meta('header') }}
+          {{ post.meta('text') }}
+        </h4>
+        <div class="hero-body-cta-wrapper">
+          <form action="{{ post.meta('link') }}" style="display:inline">
+            <button type="submit" class="uk-button uk-button-default hero-body-cta-wrapper-bg-grey">Read More ></button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+{% endif %}
+
+
+

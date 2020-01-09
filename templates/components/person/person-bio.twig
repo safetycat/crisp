@@ -1,0 +1,31 @@
+<div class="uk-card uk-card-small about-us-people-card">
+
+<!-- Portrait -->
+  <div class="uk-card-media-top about-us-people-card-image-container">
+      <!--  <a href="" uk-toggle="target: #bod{{loop.index}} ;cls: uk-hidden"> -->
+        <img class="uk-border-circle uk-align-center" src="{{ person.thumbnail.src('team-portrait') ?? 'http://crisp.catbox.org.uk/wp-content/uploads/2019/05/default-person.png'|resize(200,200) }}" alt="headshot of person" >
+      <!-- </a> -->
+  </div>
+
+
+    <div class="uk-text-center">
+ <!--     Title -->
+      <!-- <a href="" uk-toggle="target: #bod{{loop.index}} ;cls: uk-hidden"> -->
+        <h3 class="" >{{person.post_title}}</h3>
+      <!-- </a> -->
+      <div class="uk-text-bold uk-margin-small-bottom">{{ person.terms('position').0.name }}</div>
+
+<!-- Bio -->
+      <div id="bod{{loop.index}}" class="bod button1 uk-padding-small" >
+      <p class="uk-text-justify">
+        {{person.post_content}}
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

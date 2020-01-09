@@ -1,0 +1,15 @@
+
+<div class="block"
+
+  <div class="block block-quote-no-image" style="background-color:{{background_colour}}">
+    <div class="block-quote-no-image-content uk-padding">
+
+      {% if headline %}<h3 class="block-quote-no-image-headline">{{headline}}!</h3>{% endif %}
+    
+      <span class="block-quote-no-image-body uk-text-large {{ background_colour == '#fff' ? 'uk-dark' : 'uk-light' }}">{{body_text}}</span>
+
+      {% if link %}<a class="block-quote-no-image-link" href="{{link}}">Read more...</a>{% endif %}
+    </div>       
+  </div>
+
+</div>
